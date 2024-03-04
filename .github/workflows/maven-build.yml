@@ -49,5 +49,5 @@ jobs:
           #argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }}
           argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --grpc-web
 
-          argocd app create spring-petclinic --repo https://github.com/tensai-agility/kub-spring-petclinic.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
+          argocd app create java-petclinic --repo https://github.com/tensai-agility/kub-spring-petclinic.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
           argocd app sync spring-petclinic    
