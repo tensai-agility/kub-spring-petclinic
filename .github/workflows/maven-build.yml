@@ -49,7 +49,7 @@ jobs:
           #argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }}
           argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --grpc-web
           argocd app delete argo-petclinic
-          #argocd app create test-environment --repo https://github.com/tensai-agility/kub-spring-petclinic.git --path . --dest-server https://kubernetes.default.svc --dest-namespace argo-petclinic
+          #argocd app create tester-environment --repo https://github.com/tensai-agility/kub-spring-petclinic.git --path . --dest-server https://kubernetes.default.svc --dest-namespace argo-petclinic
           #argocd app create java-petclinic --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace argo-petclinic
           #argocd app create blue-green- --repo https://github.com/tensai-agility/argocd-example-apps.git --path blue-green --dest-namespace default --dest-server https://kubernetes.default.svc --helm-set replicaCount=2
           argocd app create --name blue-green --repo https://github.com/tensai-agility/argocd-example-apps.git --dest-server https://kubernetes.default.svc --dest-namespace default --path blue-green && argocd app sync blue-green
