@@ -1,4 +1,4 @@
-#  Helll This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+#  Hellll This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Java CI with Maven
@@ -48,7 +48,7 @@ jobs:
         run: |
           #argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }}
           argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --grpc-web
-          argocd app delete myapp-argo-application
+          #argocd app delete myapp-argo-application
           #argocd app create tester-environment --repo https://github.com/tensai-agility/kub-spring-petclinic.git --path . --dest-server https://kubernetes.default.svc --dest-namespace argo-petclinic
           #argocd app create java-petclinic --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace argo-petclinic
           #argocd app create blue-green --repo https://github.com/tensai-agility/argocd-example-apps.git --path blue-green --dest-namespace default --dest-server https://kubernetes.default.svc --helm-set replicaCount=2
